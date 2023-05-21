@@ -4,7 +4,7 @@ Using the Open Editors data to explore journal editorship in UK Universities
 
 The REF provides data on evaluation of University research outputs and environments. You can *crudely* position institutions by the average (median) score their received in the REF across all the units of assessment (roughly, 'disciplines') they submitted.
 
-Institutions also differered in how many research staff they have / they submitted. The largest was University of Oxford, which submitted ~3400 FTE staff. See https://github.com/tomstafford/ref2021
+Institutions also differered in how many research staff they have / they submitted. The largest was University of Oxford, which submitted ~3400 FTE staff. See <https://github.com/tomstafford/ref2021>
 
 # Open Editor Data
 
