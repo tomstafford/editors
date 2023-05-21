@@ -30,4 +30,6 @@ My analysis "double-counts" individuals who are editors on more than one journal
 There's more to life than REF scores (but you might not know it from the way some institutional processes work)
 
 
-A Tom Stafford project, feedback by email or to [@tomstafford](https://mastodon.online/@tomstafford)
+# Next?
+
+I'm thinking about what else to do with these data, so feedback is welcome, by email or to [@tomstafford](https://mastodon.online/@tomstafford)
