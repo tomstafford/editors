@@ -1,7 +1,6 @@
-# editors
-Using Open Editors data to explore journal editorship in UK Universities
+Using the Open Editors data to explore journal editorship in UK Universities
 
-#REF2021 data 
+# REF2021 data 
 
 The REF provides data on evaluation of University research outputs and environments. You can *crudely* position institutions by the average (median) score their received in the REF across all the units of assessment (roughly, 'disciplines') they submitted.
 
@@ -21,9 +20,14 @@ For an initial investigation, I plotted REF score against proportion of journal 
 
 ![](figs/gpa_vs_eds.png)
 
+I made a [crude version with rollover functionality](https://tomstafford.github.io/editors/figs/plotly.html), so you can pick out your favourite UK institutions. Imperial is in the top right, UCL is the large blop nearly as high up the y axis. Oxford is the largest blob, on the x=3.5 line. 
+
 
 # Caveats
 
 My analysis "double-counts" individuals who are editors on more than one journal
 
 There's more to life than REF scores (but you might not know it from the way some institutional processes work)
+
+
+A Tom Stafford project, feedback by email or to [@tomstafford](https://mastodon.online/@tomstafford)
