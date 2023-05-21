@@ -1,5 +1,3 @@
-# github.com/tomstafford/editors
-
 Using the Open Editors data to explore journal editorship in UK Universities
 
 # REF2021 data 
@@ -35,3 +33,5 @@ There's more to life than REF scores (but you might not know it from the way som
 # Next?
 
 I'm thinking about what else to do with these data, so feedback is welcome, by email or to [@tomstafford](https://mastodon.online/@tomstafford)
+
+Repo: <https://github.com/tomstafford/editors>
