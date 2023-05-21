@@ -1,4 +1,4 @@
-Downloaded from
+Download editors1.tsv and editors2.tsv from
 
 https://github.com/andreaspacher/openeditors/tree/main/Output/2022-Scraping
 
