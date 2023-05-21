@@ -105,7 +105,7 @@ ms=list(lf['FTE of submitted staff'].values/10)
 ms_SHF =lf.loc['The University of Sheffield','FTE of submitted staff']/10
 ms_STN =lf.loc['University of Southampton','FTE of submitted staff']/10
 SHOWSHF=False;SHOWSTN=False
-annotext='Points scaled by FTE staff\nsubmitted to REF2021\n\n'
+annotext='Point size scaled by FTE staff\nsubmitted to REF2021\n\n'
 if SHOWSHF:
     annotext=annotext+"TUOS in red\n"
 if SHOWSTN:
@@ -118,8 +118,17 @@ if SHOWSHF:
     plt.scatter(lf.loc['University of Southampton','GPA'],lf.loc['University of Southampton','ed_per_FTE'],marker='o',s=ms_STN,color='yellow',alpha=0.8)    
 plt.ylim([-0.05,1])
 plt.xlim([1.5,4])
-plt.ylabel('Editorships per FTE research staff')
-plt.xlabel('Institution median GPA from REF2021')
+plt.ylabel('Editorships per FTE research staff',fontsize=12)
+plt.xlabel('Institution median GPA from REF2021',fontsize=14)
 plt.title('University REF2021 results vs proportion of journal editors')
-plt.annotate(annotext,(1.6,0.63))
+plt.annotate(annotext,(3.83,0.0),color='#1f77b4',fontsize=8,rotation=90)
 plt.savefig(os.path.join('figs','gpa_vs_eds.png'),bbox_inches='tight',dpi=320)
+
+
+import plotly.express as px
+
+fig = px.scatter(lf, x="GPA", y="ed_per_FTE", size='FTE of submitted staff',hover_data=['search_name','ed_per_FTE'])
+fig.update_xaxes(range=[1.5, 4])
+fig.update_yaxes(range=[-0.05,1])  
+fig.write_html("figs/plotly.html")
+
