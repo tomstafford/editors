@@ -8,9 +8,11 @@ Institutions also differered in how many research staff they have / they submitt
 
 # Open Editor Data
 
-Open Editors project https://openeditors.ooir.org/ scrapes data on journal editors and their affiliations.
+Open Editors project <https://openeditors.ooir.org/> scrapes data on journal editors and their affiliations.
 
 The data is messy, often out of data and incomplete. Some publishers (e.g. Taylor and Francis) are not checked. Some editors list their affiliations inconsistency. For my data. this means that institutions with more variations on their name will be undercounted (e.g. LSE could be "LSE", "London School of Economics","The London School of Economics and Political Science", etc)
+
+Reference: Nishikawa-Pacher, Andreas, Tamara Heck and Kerstin Schoch (2022), "Open Editors: A Dataset of Scholarly Journals’ Editorial Board Positions", Research Evaluation, DOI: 10.1093/reseval/rvac037. 
 
 # Nonetheless
 
