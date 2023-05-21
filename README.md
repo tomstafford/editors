@@ -1,3 +1,5 @@
+# github.com/tomstafford/editors
+
 Using the Open Editors data to explore journal editorship in UK Universities
 
 # REF2021 data 
