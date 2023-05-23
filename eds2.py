@@ -104,17 +104,15 @@ lf['ed_per_FTE']=lf['editors']/lf['FTE of submitted staff']
 ms=list(lf['FTE of submitted staff'].values/10)
 ms_SHF =lf.loc['The University of Sheffield','FTE of submitted staff']/10
 ms_STN =lf.loc['University of Southampton','FTE of submitted staff']/10
-SHOWSHF=False;SHOWSTN=False
+SHOWSHF=True;SHOWSTN=False
 annotext='Point size scaled by FTE staff\nsubmitted to REF2021\n\n'
-if SHOWSHF:
-    annotext=annotext+"TUOS in red\n"
 if SHOWSTN:
     annotext=annotext+"SOTON in yellow"
 plt.clf()
 plt.scatter(lf['GPA'],lf['ed_per_FTE'],s=ms,marker='o',alpha=0.3)
 if SHOWSHF:
     plt.scatter(lf.loc['The University of Sheffield','GPA'],lf.loc['The University of Sheffield','ed_per_FTE'],marker='o',s=ms_SHF,color='red',alpha=0.8)
-if SHOWSHF:
+if SHOWSTN:
     plt.scatter(lf.loc['University of Southampton','GPA'],lf.loc['University of Southampton','ed_per_FTE'],marker='o',s=ms_STN,color='yellow',alpha=0.8)    
 plt.ylim([-0.05,1])
 plt.xlim([1.5,4])
@@ -123,6 +121,10 @@ plt.xlabel('Institution median GPA from REF2021',fontsize=14)
 plt.title('University REF2021 results vs proportion of journal editors')
 plt.annotate(annotext,(3.83,0.0),color='#1f77b4',fontsize=8,rotation=90)
 plt.savefig(os.path.join('figs','gpa_vs_eds.png'),bbox_inches='tight',dpi=320)
+if SHOWSHF:
+    plt.annotate("TUOS in red",(1.6,0.74),color='red',fontsize=8,rotation=0)
+    plt.savefig(os.path.join('figs','SHFgpa_vs_eds.png'),bbox_inches='tight',dpi=320)
+
 
 
 import plotly.express as px
