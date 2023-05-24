@@ -44,6 +44,6 @@ Repo: <https://github.com/tomstafford/editors>
 
 Lizzie Gadd asks what the plot would look like if it was only the 'environment' component of the REF on the x-axis. Here we are
 
-![](figs/ENVgpa_vs_eds.png)
+![](figs/gpaENV_vs_eds.png)
 
 Rollover version [here](figs/plotlyENV.html)
