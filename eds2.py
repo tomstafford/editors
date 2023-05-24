@@ -29,7 +29,6 @@ import os #file and folder functions
 import numpy as np #number function
 import pandas as pd #dataframes!
 import matplotlib.pyplot as plt #plotting function
-import seaborn as sns
 #matplotlib named colours https://matplotlib.org/stable/gallery/color/named_colors.html
 
 print("identifying host machine")

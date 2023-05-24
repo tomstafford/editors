@@ -47,3 +47,81 @@ Lizzie Gadd asks what the plot would look like if it was only the 'environment' 
 ![](figs/gpaENV_vs_eds.png)
 
 Rollover version [here](figs/plotlyENV.html)
+
+
+## 2023-05-25
+
+I got to wonder about how different publishers editing activity is concentrated vs spread across UK institutions. The Open Editors dataset contains these publishers (and these counts of editorial positions which I could associate with UK institutions)
+
+|PUBLISHER                            |EDITORS|
+|:------------------------------------|------:|
+| Frontiers                           | 14921 |
+| Elsevier                            |  6312 |
+| SAGE                                |  5019 |
+| Cambridge University Press          |  1568 |
+| Emerald                             |  1415 |
+| Inderscience                        |  1094 |
+| BioMedCentral                       |   837 |
+| PLOS                                |   683 |
+| MDPI                                |   530 |
+| Brill                               |   501 |
+| IGI Global                          |   486 |
+| Hindawi                             |   400 |
+| Royal Society of Chemistry          |   265 |
+| John Benjamins                      |   237 |
+| Longdom                             |   177 |
+| Springer Nature                     |   163 |
+| SCIRP                               |   144 |
+| Karger                              |   132 |
+| PeerJ                               |   129 |
+| American Psychological Association  |   128 |
+| SciTechnol                          |    57 |
+| iMedPub                             |    52 |
+| eLife                               |    47 |
+| Pleiades                            |    30 |
+| American Society of Civil Engineers |    14 |
+| Allied Academies                    |     6 |
+| **ALL**                             | **35347** |
+
+
+As [Christopher Eliot notes](https://mastodon.online/@chreliot@mastodon.social/110423655357454243), because not all publishers are represented, this *undercounts* the extent of editorial work done by UK academics.
+
+The plot below shows the cumulative percentage of editors when you count increasing number of institutions, starting with the institutions which host the most editors from that publisher. This means that if a publisher's editors are concentrated in a smaller number of institutions then their curve will reach more towards the top left.
+
+![](figs/concentration_eds.png)
+
+By reading off from a set y-axis point you can judge how many institutions contain Y% of a publisher's editors. For example, over all publishers ("All") about 40 institutions host 80% of editors. 
+
+I've highlighted some specific publishers, which show different curves. You can decide for yourself if this shows differential institutional capture of publishers, or publishers' differnetial capture of institutions.
+
+After making the graph I realised a simple view would be a table which showed the number of institutions across which all a publisher's editors are spread:
+
+|         PUBLISHERS        |   INSTITUTIONS|
+|:------------------------------------|----:|
+| Allied Academies                    |   6 |
+| American Society of Civil Engineers |   6 |
+| eLife                               |  14 |
+| Pleiades                            |  17 |
+| Karger                              |  29 |
+| SciTechnol                          |  31 |
+| iMedPub                             |  32 |
+| Royal Society of Chemistry          |  38 |
+| Springer Nature                     |  38 |
+| American Psychological Association  |  43 |
+| PeerJ                               |  44 |
+| SCIRP                               |  51 |
+| John Benjamins                      |  53 |
+| Longdom                             |  56 |
+| Brill                               |  71 |
+| Hindawi                             |  74 |
+| PLOS                                |  83 |
+| BioMedCentral                       |  87 |
+| Cambridge University Press          |  89 |
+| IGI Global                          |  94 |
+| MDPI                                |  94 |
+| Inderscience                        |  96 |
+| Emerald                             | 101 |
+| Elsevier                            | 113 |
+| Frontiers                           | 114 |
+| SAGE                                | 121 |
+| **ALL**                         | **134** |
