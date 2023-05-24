@@ -20,6 +20,7 @@ conda env export > environment.yml
 
 
 SAVEENV = False #toggle, export conda environment
+SHOWENV = False #use Environment rather than Overall profile
 
 #set up environment
 
@@ -68,8 +69,10 @@ df= pd.read_excel(os.path.join('data',filename),skiprows=6)
 
 df['GPA']=pd.to_numeric(df['4*'],errors='coerce').fillna(0)/100*4+pd.to_numeric(df['3*'],errors='coerce').fillna(0)/100*3+pd.to_numeric(df['2*'],errors='coerce').fillna(0)/100*2+pd.to_numeric(df['1*'],errors='coerce').fillna(0)/100*1
 
-#df=df[df['Profile']=='Overall']
-df=df[df['Profile']=='Environment']
+if SHOWENV:
+    df=df[df['Profile']=='Environment']
+else:
+    df=df[df['Profile']=='Overall']
 
 lf1=df.groupby('Institution name')['FTE of submitted staff'].sum()
 lf2=df.groupby('Institution name')['GPA'].median()
@@ -111,7 +114,7 @@ lf['ed_per_FTE']=lf['editors']/lf['FTE of submitted staff']
 ms=list(lf['FTE of submitted staff'].values/10)
 ms_SHF =lf.loc['The University of Sheffield','FTE of submitted staff']/10
 ms_STN =lf.loc['University of Southampton','FTE of submitted staff']/10
-SHOWSHF=False;SHOWSTN=False
+SHOWSHF=False;SHOWSTN=False;
 annotext='Point size scaled by FTE staff\nsubmitted to REF2021\n\n'
 if SHOWSTN:
     annotext=annotext+"SOTON in yellow"
@@ -126,8 +129,20 @@ plt.xlim([1.5,4])
 plt.ylabel('Editorships per FTE research staff',fontsize=12)
 plt.xlabel('Institution median ENVIRONMENT GPA from REF2021',fontsize=14)
 plt.title('University REF2021 results vs proportion of journal editors')
+
+if SAVEENV:
+    ENV='ENV'
+else:
+    ENV=''
+    
+if SHOWSHF:
+    SHF='SHF'
+else:
+    SHF=''
+      
+savename = SHF+'gpa'+ENV+'_vs_eds.png'
 plt.annotate(annotext,(3.83,0.0),color='#1f77b4',fontsize=8,rotation=90)
-plt.savefig(os.path.join('figs','gpaENV_vs_eds.png'),bbox_inches='tight',dpi=320)
+plt.savefig(os.path.join('figs',savename),bbox_inches='tight',dpi=320)
 if SHOWSHF:
     plt.annotate("TUOS in red",(1.6,0.74),color='red',fontsize=8,rotation=0)
     plt.savefig(os.path.join('figs','SHFgpa_vs_eds.png'),bbox_inches='tight',dpi=320)
@@ -139,5 +154,5 @@ import plotly.express as px
 fig = px.scatter(lf, x="GPA", y="ed_per_FTE", size='FTE of submitted staff',hover_data=['search_name','ed_per_FTE'])
 fig.update_xaxes(range=[1.5, 4])
 fig.update_yaxes(range=[-0.05,1])  
-fig.write_html("figs/plotly.html")
+fig.write_html("figs/plotly"+ENV+".html")
 
