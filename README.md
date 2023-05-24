@@ -37,3 +37,13 @@ There's more to life than REF scores (but you might not know it from the way som
 I'm thinking about what else to do with these data, so feedback is welcome, by email or to [@tomstafford](https://mastodon.online/@tomstafford)
 
 Repo: <https://github.com/tomstafford/editors>
+
+# Updates
+
+## 2023-05-24
+
+Lizzie Gadd asks what the plot would look like if it was only the 'environment' component of the REF on the x-axis. Here we are
+
+![](figs/ENVgpa_vs_eds.png)
+
+Rollover version [here](figs/plotlyENV.html)

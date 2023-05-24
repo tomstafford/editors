@@ -68,7 +68,8 @@ df= pd.read_excel(os.path.join('data',filename),skiprows=6)
 
 df['GPA']=pd.to_numeric(df['4*'],errors='coerce').fillna(0)/100*4+pd.to_numeric(df['3*'],errors='coerce').fillna(0)/100*3+pd.to_numeric(df['2*'],errors='coerce').fillna(0)/100*2+pd.to_numeric(df['1*'],errors='coerce').fillna(0)/100*1
 
-df=df[df['Profile']=='Overall']
+#df=df[df['Profile']=='Overall']
+df=df[df['Profile']=='Environment']
 
 lf1=df.groupby('Institution name')['FTE of submitted staff'].sum()
 lf2=df.groupby('Institution name')['GPA'].median()
@@ -80,10 +81,16 @@ lf['search_name']=lf.index.str.replace('The ','')
 
 lf.to_csv('names.csv')
 
+GPA=lf['GPA']
+
 #at this stage i add the alternate names by hand to this spreadsheet
 
 lf=pd.read_csv('data/names.csv')
+
+lf['GPA']=GPA.values
+
 lf.set_index('Institution name',inplace=True)
+
 
 
 #load editor data
@@ -104,7 +111,7 @@ lf['ed_per_FTE']=lf['editors']/lf['FTE of submitted staff']
 ms=list(lf['FTE of submitted staff'].values/10)
 ms_SHF =lf.loc['The University of Sheffield','FTE of submitted staff']/10
 ms_STN =lf.loc['University of Southampton','FTE of submitted staff']/10
-SHOWSHF=True;SHOWSTN=False
+SHOWSHF=False;SHOWSTN=False
 annotext='Point size scaled by FTE staff\nsubmitted to REF2021\n\n'
 if SHOWSTN:
     annotext=annotext+"SOTON in yellow"
@@ -117,10 +124,10 @@ if SHOWSTN:
 plt.ylim([-0.05,1])
 plt.xlim([1.5,4])
 plt.ylabel('Editorships per FTE research staff',fontsize=12)
-plt.xlabel('Institution median GPA from REF2021',fontsize=14)
+plt.xlabel('Institution median ENVIRONMENT GPA from REF2021',fontsize=14)
 plt.title('University REF2021 results vs proportion of journal editors')
 plt.annotate(annotext,(3.83,0.0),color='#1f77b4',fontsize=8,rotation=90)
-plt.savefig(os.path.join('figs','gpa_vs_eds.png'),bbox_inches='tight',dpi=320)
+plt.savefig(os.path.join('figs','gpaENV_vs_eds.png'),bbox_inches='tight',dpi=320)
 if SHOWSHF:
     plt.annotate("TUOS in red",(1.6,0.74),color='red',fontsize=8,rotation=0)
     plt.savefig(os.path.join('figs','SHFgpa_vs_eds.png'),bbox_inches='tight',dpi=320)
