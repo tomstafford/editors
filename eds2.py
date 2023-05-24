@@ -127,7 +127,9 @@ if SHOWSTN:
 plt.ylim([-0.05,1])
 plt.xlim([1.5,4])
 plt.ylabel('Editorships per FTE research staff',fontsize=12)
-plt.xlabel('Institution median ENVIRONMENT GPA from REF2021',fontsize=14)
+plt.xlabel('Institution median GPA from REF2021',fontsize=14)
+if SHOWENV:
+        plt.xlabel('Institution median ENVIRONMENT GPA from REF2021',fontsize=14)
 plt.title('University REF2021 results vs proportion of journal editors')
 
 if SAVEENV:
